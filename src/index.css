@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply font-dmSans
+}
+
+.nav-menu li a:hover {
+  @apply text-red-600 transition-all duration-300;
+}
