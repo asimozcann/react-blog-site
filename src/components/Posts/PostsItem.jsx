@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ImageContext } from "../context/ImageContext";
 
 const PostsItem = ({ blog, index }) => {
-  const { title, body, id, author, category, date } = blog;
+  const { title, id, category } = blog;
   const { images, load } = useContext(ImageContext);
 
   if (load) {

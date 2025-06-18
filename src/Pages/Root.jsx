@@ -7,7 +7,6 @@ const RootLayout = () => {
   return (
     <Fragment>
       <MainNavigation />
-
       <main className="pt-[70px]">
         <Outlet />
       </main>

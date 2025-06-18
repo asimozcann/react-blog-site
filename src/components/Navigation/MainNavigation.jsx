@@ -29,7 +29,7 @@ const MainNavigation = () => {
     <header className="bg-white text-black fixed top-0 left-0 w-full h-[70px] z-50 shadow-md">
       <Wrapper className="flex items-center justify-between h-[70px]">
         <div className="flex items-center gap-4">
-          <NavLink className="text-red-600 font-semibold" to="/home">
+          <NavLink className="text-red-600 font-semibold" to="/">
             <div className="md:flex hidden justify-center group border border-black p-2 items-center bg-white">
               <h1 className="text-black text-2xl font-mono border-r-4 border-white whitespace-nowrap overflow-hidden animate-typing transition-all duration-300 group-hover:text-red-600">
                 My Blog
@@ -47,7 +47,7 @@ const MainNavigation = () => {
         {/* 🔸 Normal menü (md ve üstü) */}
         <ul className="nav-menu  md:flex items-center text-xl font-medium gap-20 uppercase">
            <li className="hidden md:block">
-            <NavLink to="/home">Ana Sayfa</NavLink>
+            <NavLink to="/">Ana Sayfa</NavLink>
           </li>
           <li className="hidden md:block">
             <NavLink to="/blogs">Bloglar</NavLink>
@@ -77,7 +77,7 @@ const MainNavigation = () => {
       {menuOpen && (
         <ul className="nav-menu flex flex-col absolute top-[70px] left-0 w-full bg-white text-black text-xl font-medium gap-6 p-4 shadow-lg md:hidden z-50">
           <li>
-            <NavLink to="/home" onClick={() => setMenuOpen(false)}>
+            <NavLink to="/" onClick={() => setMenuOpen(false)}>
               Ana Sayfa
             </NavLink>
           </li>
