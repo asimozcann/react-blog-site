@@ -25,8 +25,8 @@ function App() {
                 <Route path="about" element={<AboutPage />} />
                 <Route path="blogs/:id" element={<BlogDetailsPage />} />
                 <Route path="search-results" element={<SearchResultsPage />} />
-                <Route path="*" element={<ErrorPage />} />
               </Route>
+              <Route path="*" element={<ErrorPage />} />
             </Routes>
           </BrowserRouter>
         </ImageProvider>
