@@ -7,7 +7,11 @@ const PostsItem = ({ blog, index }) => {
   const { images, load } = useContext(ImageContext);
 
   if (load) {
-    return <p className="text-center">Yükleniyor...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   const imageUrl =

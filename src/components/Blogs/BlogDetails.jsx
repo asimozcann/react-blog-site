@@ -6,14 +6,23 @@ import Wrapper from "../UI/Wrapper";
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const { blogs } = useContext(BlogContext);
-  const { images } = useContext(ImageContext);
+  const { blogs, loading } = useContext(BlogContext);
+  const { images, load } = useContext(ImageContext);
 
   const blogIndex = blogs.findIndex((b) => b.id.toString() === id);
   const blog = blogs[blogIndex];
+  if (loading || load || !blogs.length || !images.length) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   if (!blog) {
-    return <p className="text-center text-red-500 text-xl mt-10">Blog bulunamadı.</p>;
+    return (
+      <p className="text-center text-red-500 text-xl mt-10">Blog bulunamadı.</p>
+    );
   }
 
   // Resim başa sarma (circular)
@@ -22,8 +31,12 @@ const BlogDetails = () => {
   return (
     <Wrapper className="max-w-4xl mt-8 mx-auto">
       <div>
-        <h2 className="md:text-2xl text-xl mt-4 font-semibold text-red-600 ">{blog.category}</h2>
-        <h1 className="md:text-4xl text-3xl capitalize mt-2 font-semibold mb-4">{blog.title}</h1>
+        <h2 className="md:text-2xl text-xl mt-4 font-semibold text-red-600 ">
+          {blog.category}
+        </h2>
+        <h1 className="md:text-4xl text-3xl capitalize mt-2 font-semibold mb-4">
+          {blog.title}
+        </h1>
         <div className="w-full mt-3 h-[1.5px] bg-slate-300" />
         <span className="text-gray-500 flex items-center gap-2 md:text-xl mt-2 mr-2">
           {blog.author}

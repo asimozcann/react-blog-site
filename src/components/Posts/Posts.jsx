@@ -8,7 +8,11 @@ const Posts = () => {
   const { blogs, loading } = useContext(BlogContext);
 
   if (loading) {
-    return <p className="text-center">Yükleniyor...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   return (
@@ -25,7 +29,6 @@ const Posts = () => {
           <Link to="/blogs" className="text-red-600 text-2xl font-medium ">
             Tüm Bloglar
           </Link>
-          
         </div>
         <div className="w-full mt-4 h-[1.5px] bg-gray-300" />
       </Wrapper>

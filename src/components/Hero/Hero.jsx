@@ -8,9 +8,13 @@ const Hero = () => {
   const { blogs, loading } = useContext(BlogContext);
   const { images, load } = useContext(ImageContext);
   let index = 0;
-  // Hook'lar yukarıda çağrıldıktan sonra kontrol yap
+  
   if (loading || load || !blogs.length || !images.length) {
-    return <p className="text-center">Yükleniyor...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   const imageUrl =
